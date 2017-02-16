@@ -15,7 +15,7 @@
       </div>
     </div>
     <p>
-      Video.js + IMA + LKQD:
+      Video.js + IMA + LKQD + iPhone:
       <a href="https://github.com/googleads/videojs-ima/issues/317">Issue 317</a>
     </p>
 
@@ -25,9 +25,33 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/videojs-contrib-ads/4.2.3/videojs.ads.js"></script>
     <script src="//rawgit.com/googleads/videojs-ima/master/src/videojs.ima.js"></script>
 
-    <script src="//code.jquery.com/jquery-3.1.1.slim.min.js"></script>
+    <script src="//code.jquery.com/jquery-3.1.1.min.js"></script>
 
     <script src="core.js"></script>
-    <script src="test/broken.js"></script>
+    <ul>
+      <li>
+        Test Case #1: <input type="button" value="BROKEN" onclick="$.ajax('test/broken.js');" />
+        <p>
+          The preroll ad plays inline, hidden behind the fullscreen video player that opens too early (with the content paused).
+        </p>
+      </li>
+      <li>
+        Test Case #1: <input type="button" value="FIXED-1" onclick="$.ajax('test/fixed1.js');" />
+        <p>
+          Calling setContentWithAdTag() in response to the user's click fixes the problem.
+        </p>
+      </li>
+      <li>
+        Test Case #1: <input type="button" value="FIXED-2" onclick="$.ajax('test/fixed2.js');" />
+        <p>
+          Passing { preload: 'none' } to videojs(), or omitting this option, also fixes the problem.
+        </p>
+      </li>
+    </ul>
+
+    <p>
+      Click a button to configure a test, then click on the player's play button. Reload between tests.
+    </p>
+
   </body>
 </html>
