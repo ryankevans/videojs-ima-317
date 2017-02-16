@@ -3,10 +3,10 @@ var config = {
     playerWidth: 640,
     playerHeight: 360,
 
-    thumbnailUrl: '//googleads.github.io/videojs-ima/examples/posters/android.png',
+    thumbnailUrl: './assets/android.png',
     sources: [{
 	    type :'video/mp4',
-	    src: 'http://rmcdn.2mdn.net/Demo/vast_inspector/android.mp4'
+	    src: './assets/android.mp4'
     }],
 
     // LKQD Offical Demo Tag: Desktop+Mobile In-Banner
